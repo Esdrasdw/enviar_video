@@ -4,7 +4,7 @@ API FastAPI para autorizar via Meta Graph e publicar videos (Reels/Video/Stories
 
 ## Variaveis de ambiente
 - `META_APP_ID` e `META_APP_SECRET`: dados do app na Meta.
-- `PUBLIC_BASE_URL`: URL publica do deploy (ex: `https://seuapp.up.railway.app`).
+- `PUBLIC_BASE_URL`: URL publica do deploy (ex: `https://seuapp.up.railway.app`). Valor padrao: `https://enviarvideo-production.up.railway.app`.
 - `META_REDIRECT_URI` (opcional): se nao definir, usa `PUBLIC_BASE_URL/oauth/callback`.
 - `META_SCOPES` (opcional): escopos solicitados; valor padrao cobre publish.
 

@@ -8,7 +8,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse, HTMLResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-APP_VERSION = "v20.0"
+APP_VERSION = "v24.0"
 GRAPH = f"https://graph.facebook.com/{APP_VERSION}"
 
 META_APP_ID = os.getenv("META_APP_ID", "").strip()
@@ -22,7 +22,11 @@ META_SCOPES = os.getenv(
 ).strip()
 
 # Base publica do app (Railway). Ex: https://seuapp.up.railway.app
-PUBLIC_BASE_URL = os.getenv("PUBLIC_BASE_URL", "").strip().rstrip("/")
+PUBLIC_BASE_URL = (
+    os.getenv("PUBLIC_BASE_URL", "https://enviarvideo-production.up.railway.app")
+    .strip()
+    .rstrip("/")
+)
 
 # Armazenamento em memoria (para producao real, prefira Postgres/Redis)
 STATE_NONCE = secrets.token_urlsafe(24)
